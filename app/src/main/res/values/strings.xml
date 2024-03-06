@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Aston_intensiv_4</string>
+    <string name="button_text_part_1">Part1. Fragmets A-B-C-D</string>
+    <string name="button_text_part_2">Part2. List of users</string>
 </resources>
