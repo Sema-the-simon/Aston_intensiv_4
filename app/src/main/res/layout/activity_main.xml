@@ -5,15 +5,20 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/mainFragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnToPart1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:text="@string/button_text_part_1"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/btnToPart2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +26,7 @@
         app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnToPart2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -30,6 +35,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/btnToPart1" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/mainButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="btnToPart1,btnToPart2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

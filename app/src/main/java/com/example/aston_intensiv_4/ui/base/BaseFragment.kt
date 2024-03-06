@@ -1,4 +1,4 @@
-package com.example.aston_intensiv_4.ui
+package com.example.aston_intensiv_4.ui.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -21,9 +21,15 @@ abstract class BaseFragment<VB : ViewBinding>(
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         _binding = createBinding(inflater, container)
         return binding.root
     }
 
     abstract fun createBinding(inflater: LayoutInflater, container: ViewGroup?): VB
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

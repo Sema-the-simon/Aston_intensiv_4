@@ -46,7 +46,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
 
     implementation(libs.androidx.fragment.ktx)
-    implementation(libs.androidx.viewbinding)
+
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
