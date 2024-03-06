@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.commit
 import com.example.aston_intensiv_4.R
 import com.example.aston_intensiv_4.databinding.FragmentCBinding
+import com.example.aston_intensiv_4.setFragment
 import com.example.aston_intensiv_4.ui.base.BaseFragment
 
 const val FRAGMENT_C_NAME = "FRAGMENT_C"
@@ -29,11 +29,11 @@ class FragmentC : BaseFragment<FragmentCBinding>(
             tvMessageFromB.text = args.getString(BUNDLE_KEY_MESSAGE) ?: ""
 
             btnNavToD.setOnClickListener {
-                parentFragmentManager.commit {
-                    replace(R.id.mainFragmentContainer, FragmentD())
-                    setReorderingAllowed(true)
-                    addToBackStack(FRAGMENT_D_NAME)
-                }
+                parentFragmentManager.setFragment(
+                    R.id.mainFragmentContainer,
+                    FragmentD(),
+                    FRAGMENT_D_NAME
+                )
             }
 
             btnNavToA.setOnClickListener {
