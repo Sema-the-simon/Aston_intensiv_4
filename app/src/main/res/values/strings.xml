@@ -13,4 +13,18 @@
     <string name="fragment_c_button_text_nav_to_A">Go to Fragment A</string>
     <string name="fragment_d_button_text">Go to Fragment B</string>
     <string name="msg_from_B_to_C">Hello Fragment C</string>
+    <string name="default_text_id">id:0</string>
+    <string name="default_text_name">Name</string>
+    <string name="default_text_surname">Surname</string>
+    <string name="default_text_phone_number">+7 999 999 9999</string>
+    <string name="user_item_img_description">user avatar</string>
+    <string name="user_id">id:%1$s</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="edit_user_info_hint_name">name</string>
+    <string name="edit_user_info_hint_surname">surname</string>
+    <string name="edit_user_info_hint_phone_number">phone number</string>
+    <string name="edit_user_info_hint_uri">img Uri</string>
+    <string name="edit_user_info_btn_save">Save</string>
+    <string name="edit_user_info_btn_cancel">Cancel</string>
 </resources>

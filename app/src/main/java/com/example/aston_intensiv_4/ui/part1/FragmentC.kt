@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.aston_intensiv_4.R
 import com.example.aston_intensiv_4.databinding.FragmentCBinding
-import com.example.aston_intensiv_4.setFragment
+import com.example.aston_intensiv_4.utils.setFragment
 import com.example.aston_intensiv_4.ui.base.BaseFragment
 
 const val FRAGMENT_C_NAME = "FRAGMENT_C"

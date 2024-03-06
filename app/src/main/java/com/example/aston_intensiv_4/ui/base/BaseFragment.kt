@@ -21,7 +21,6 @@ abstract class BaseFragment<VB : ViewBinding>(
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         _binding = createBinding(inflater, container)
         return binding.root
     }

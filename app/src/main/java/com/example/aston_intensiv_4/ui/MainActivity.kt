@@ -5,22 +5,36 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.aston_intensiv_4.R
 import com.example.aston_intensiv_4.databinding.ActivityMainBinding
-import com.example.aston_intensiv_4.setFragment
 import com.example.aston_intensiv_4.ui.part1.FRAGMENT_A_NAME
 import com.example.aston_intensiv_4.ui.part1.FragmentA
 import com.example.aston_intensiv_4.ui.part2.USER_LIST_FRAGMENT_NAME
 import com.example.aston_intensiv_4.ui.part2.UserListFragment
+import com.example.aston_intensiv_4.utils.setFragment
 
 const val SHOW_NAV_BUTTONS_KEY = "SHOW_NAV_BUTTONS_KEY"
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private var buttonsVisibility = View.VISIBLE
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        savedInstanceState?.run {
+            buttonsVisibility = getInt(STATE_NAV_BUTTONS_VISIBILITY)
+        }
+        binding.mainButtons.visibility = buttonsVisibility
+        setListeners()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt(STATE_NAV_BUTTONS_VISIBILITY, buttonsVisibility)
+    }
+
+    private fun setListeners() {
         binding.apply {
             btnToPart1.setOnClickListener {
                 supportFragmentManager.setFragment(
@@ -28,7 +42,9 @@ class MainActivity : AppCompatActivity() {
                     FragmentA(),
                     FRAGMENT_A_NAME
                 )
-                mainButtons.visibility = View.GONE
+                buttonsVisibility = View.GONE
+                mainButtons.visibility = buttonsVisibility
+
             }
 
             btnToPart2.setOnClickListener {
@@ -37,7 +53,8 @@ class MainActivity : AppCompatActivity() {
                     UserListFragment(),
                     USER_LIST_FRAGMENT_NAME
                 )
-                mainButtons.visibility = View.GONE
+                buttonsVisibility = View.GONE
+                mainButtons.visibility = buttonsVisibility
             }
         }
 
@@ -46,5 +63,9 @@ class MainActivity : AppCompatActivity() {
         ) { _, _ ->
             binding.mainButtons.visibility = View.VISIBLE
         }
+    }
+
+    companion object {
+        val STATE_NAV_BUTTONS_VISIBILITY = "NAV_BUTTONS_VISIBILITY"
     }
 }

@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import com.example.aston_intensiv_4.R
 import com.example.aston_intensiv_4.databinding.FragmentBBinding
-import com.example.aston_intensiv_4.setFragment
 import com.example.aston_intensiv_4.ui.base.BaseFragment
+import com.example.aston_intensiv_4.utils.setFragment
 
 const val FRAGMENT_B_NAME = "FRAGMENT_B"
 
