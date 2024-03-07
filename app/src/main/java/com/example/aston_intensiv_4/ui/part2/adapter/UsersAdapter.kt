@@ -1,4 +1,4 @@
-package com.example.aston_intensiv_4.adapter
+package com.example.aston_intensiv_4.ui.part2.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -4,9 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/ivAvatar"
+        android:layout_width="180dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:contentDescription="@string/user_item_img_description"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/etUserPhoneNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/etUserName"
+        app:srcCompat="@drawable/no_image" />
+
     <EditText
         android:id="@+id/etUserName"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:layout_marginTop="16dp"
@@ -14,23 +26,24 @@
         android:inputType="text"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivAvatar"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/etUserSurname"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:hint="@string/edit_user_info_hint_surname"
         android:inputType="text"
         android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivAvatar"
         app:layout_constraintTop_toBottomOf="@id/etUserName" />
 
     <EditText
         android:id="@+id/etUserPhoneNumber"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:layout_marginStart="20dp"
@@ -38,7 +51,8 @@
         android:hint="@string/edit_user_info_hint_phone_number"
         android:inputType="phone"
         android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivAvatar"
         app:layout_constraintTop_toBottomOf="@id/etUserSurname" />
 
     <EditText
